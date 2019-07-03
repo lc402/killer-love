@@ -1,0 +1,5 @@
+<!--miniprogram/pages/loginroom/loginroom.wxml-->
+<view>
+  <input class='input-item' type="number" placeholder="输入房间号码" bindinput='getRoomId'></input>
+  <button class='liucx-ok' bindtap='loginRoom'>确认</button>
+</view>
