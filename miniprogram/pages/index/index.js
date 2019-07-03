@@ -46,6 +46,10 @@ Page({
     }
   },
 
+  getTotalPeople:function(e){
+    console.log(e.detail.value);
+  },
+
   onGetOpenid: function() {
     // 调用云函数
     wx.cloud.callFunction({

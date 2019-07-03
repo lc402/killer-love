@@ -41,6 +41,42 @@ page {
   background-size: cover;
 }
 
+.result {
+  width: 100%;
+  height: auto;
+  padding: 20rpx 20rpx 20rpx 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.liucx-ok {
+  background: green
+}
+.input-item {
+  width: auto;
+  height: auto;
+  padding: 0 0 0 40rpx;
+}
+.liucx-item {
+  color: green
+}
+.item-counter {
+  padding: 0 0 0 40rpx;
+  flex-direction: row;
+  align-items: flex-start;
+  box-sizing: border-box;
+  height: 100rpx;
+  display: flex;
+}
+.liucx1 {
+  background-color: red
+}
+.liucx2 {
+  background-color: green
+}
+
 .userinfo-nickname::after {
   border: none;
 }

@@ -1,0 +1,31 @@
+<!--miniprogram/pages/initPeople/initPeople.wxml-->
+<view class="liucx-init">
+  <view class="item-counter">
+    <text class='liucx-item'>杀手数量:</text>
+    <input class='input-item' type="number" placeholder="输入数字" bindinput='getInputKill'></input>
+  </view>
+  <view class="item-counter">
+    <text class='liucx-item'>警察数量:</text>
+    <input class='input-item' type="number" placeholder="输入数字" bindinput='getInputPolice'></input>
+  </view>
+  <view class="item-counter">
+    <text class='liucx-item'>平民数量:</text>
+    <input class='input-item' type="number" placeholder="输入数字" bindinput='getInputMan'></input>
+  </view>
+
+  <view class='infor-header'>
+    输入信息确认:
+  </view>
+  <view class='result'>
+    <text>杀手:{{killNum}}</text>
+  </view>
+  <view class='result'>
+    <text>警察:{{policeNum}}</text>
+  </view>
+  <view class='result'>
+    <text>平民:{{manNum}}</text>
+  </view>
+  <view>
+    <button class='liucx-ok' bindtap='setAllNum'>确认</button>
+  </view>
+</view>
