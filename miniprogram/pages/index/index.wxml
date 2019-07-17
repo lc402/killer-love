@@ -29,8 +29,8 @@
 
   <!-- 新建云函数 -->
   <view class="uploader">
-    <navigator url="../addFunction/addFunction" open-type="navigate" class="uploader-text">
-      <text>快速新建云函数</text>
+    <navigator url="../mainroom/mainroom" open-type="navigate" class="uploader-text">
+      <text>进入房间</text>
     </navigator>
   </view>
 

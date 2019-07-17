@@ -25,7 +25,10 @@
   <view class='result'>
     <text>平民:{{manNum}}</text>
   </view>
-  <view>
-    <button class='liucx-ok' bindtap='setAllNum'>确认</button>
+  <view class='result-create'>
+    <navigator url="../gameroom/gameRoom" open-type="navigate" class="uploader-text">
+    <text>创建房间:{{totalNum}}人</text>
+    </navigator>
+
   </view>
 </view>

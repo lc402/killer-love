@@ -1,6 +1,7 @@
 // miniprogram/pages/loginroom/loginroom.js
-var lRoomId;
-var lUserId;
+
+
+
 Page({
 
   /**

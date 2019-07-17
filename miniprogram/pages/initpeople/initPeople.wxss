@@ -11,6 +11,18 @@
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.result-create {
+  width: 100%;
+  height: auto;
+  padding: 20rpx 20rpx 20rpx 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: green;
+}
+
 .liucx-ok {
   background: green;
 }

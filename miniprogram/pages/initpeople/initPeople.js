@@ -1,9 +1,6 @@
 // miniprogram/pages/initPeople/initPeople.js
 
-var killNum;
-var policeNum;
-var manNum;
-var total;
+var room = getApp().globalData.room;
 Page({
 
   /**
@@ -17,7 +14,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    room.killers = 0;
+    room.polices = 0;
+    room.farmers = 0
+    room.totals = 0
   },
 
   /**
@@ -31,7 +31,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.setData({
+      killNum: room.killers,
+      policeNum: room.polices,
+      manNum: room.farmers
+    })
   },
 
   /**
@@ -45,7 +49,10 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-
+    room.killers = 0;
+    room.polices = 0;
+    room.farmers = 0
+    room.totals = 0
   },
 
   /**
@@ -70,30 +77,38 @@ Page({
   },
   getInputKill: function(e) {
     console.log(e.detail.value);
-    killNum = e.detail.value;
+    room.totals = (room.totals) - (room.farmers) + parseInt(e.detail.value);
+    room.killers = e.detail.value
     this.setData({
-      killNum: killNum
+      totalNum: room.totals,
+      killNum: room.killers
     })
   },
   getInputPolice: function(e) {
     console.log(e.detail.value);
-    policeNum = e.detail.value;
+    room.totals = (room.totals) - (room.farmers) + parseInt(e.detail.value);
+    room.polices = e.detail.value
     this.setData({
-      policeNum: policeNum
+      totalNum: room.totals,
+      policeNum: room.polices
     })
   },
   getInputMan: function(e) {
     console.log(e.detail.value);
-    manNum = e.detail.value;
+    room.totals = (room.totals) - (room.farmers) + parseInt(e.detail.value);
+    room.farmers = e.detail.value
     this.setData({
-      manNum: manNum
+      manNum: room.farmers,
+      totalNum: room.totals
     })
   },
   setAllNum: function(e) {
-    console.log("kill:" + killNum);
-    console.log("police:" + policeNum);
-    console.log("man:" + manNum);
-    total = killNum + policeNum + manNum;
-    console.log("total:" + total);
+    console.log("kill:" + room.killers);
+    console.log("police:" + room.polices);
+    console.log("man:" + room.farmers);
+    console.log("total:" + room.totals);
+    this.setData({
+      totalNum: room.totals
+    })
   },
 })

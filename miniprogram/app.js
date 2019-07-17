@@ -1,4 +1,5 @@
 //app.js
+
 App({
   onLaunch: function () {
     
@@ -10,6 +11,16 @@ App({
       })
     }
 
-    this.globalData = {}
+    this.globalData = {
+      room: {
+        polices: 3,
+        killers: 3,
+        farmers: 6,
+        totals: 12,
+        init: false,
+        reset: false,
+        people:[]
+      }
+    }
   }
 })
