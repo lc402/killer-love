@@ -25,11 +25,22 @@
     <text>房间信息</text>
   </view>
 
+   <!-- <view class="container">
+    <block wx:for='{{tableData}}' wx:key='{{index}}'>
+      <view class='item' data-index='{{index}}' bindtap='itemClick'>{{item.name}}</view>
+    </block>
+    
+  </view> -->
+
   <view class="container">
-      <block wx:for='{{tableData}}' wx:key='*this'>
-        <view class='item' data-index='{{index}}' bindtap='itemClick'>{{item.name}}</view>
-      </block>
+    <view wx:for='{{tableData}}' wx:for-item="itemData" wx:key='index'>
+      <view class='item' data-index='{{index}}' bindtap='itemClick'>{{itemData.name}}</view>
     </view>
- 
+    
+  </view>
+
+
+  
+
 
 </view>
