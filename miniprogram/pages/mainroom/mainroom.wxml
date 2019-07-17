@@ -1,38 +1,35 @@
 <view>
   <text class='room-head'>房间号码:{{roomId}}</text>
   <view class="uploaderR" style="background:{{inputBg}}">
-    <view class='titel-item1' >
+    <view class='titel-item1'>
       <text>警察:</text>
-      <input class='input-item' type="number" bindinput='getPolice'
-      disabled='{{isdisableInput}}'></input>
+      <input class='input-item' type="number" bindinput='getPolice' disabled='{{isdisableInput}}'></input>
     </view>
 
     <view class='titel-item2'>
       <text>杀手:</text>
-      <input class='input-item' type="number" bindinput='getKill'
-      disabled='{{isdisableInput}}'></input>
+      <input class='input-item' type="number" bindinput='getKill' disabled='{{isdisableInput}}'></input>
     </view>
 
     <view class='titel-item3'>
       <text>平民:</text>
-      <input class='input-item' type="number" bindinput='getFarmer'
-      disabled='{{isdisableInput}}'></input>
+      <input class='input-item' type="number" bindinput='getFarmer' disabled='{{isdisableInput}}'></input>
     </view>
   </view>
 
   <view class='uploader' style="background:{{inputBg}}">
     <button id="init" class='button-view' style="background:{{viewBg}}" bindtap='init' disabled='{{isdisableI}}'>启动</button>
-    <button id="reset" class='button-view' style="background:{{viewRg}}" bindtap='reset'
-    disabled='{{isdisableR}}'>重置</button>
+    <button id="reset" class='button-view' style="background:{{viewRg}}" bindtap='reset' disabled='{{isdisableR}}'>重置</button>
   </view>
   <view class='room-head'>
-      <text>房间信息</text>
+    <text>房间信息</text>
   </view>
 
-    <view class="container">
+  <view class="container">
       <block wx:for='{{tableData}}' wx:key='*this'>
-        <view class='item'>{{item.name}}</view>
+        <view class='item' data-index='{{index}}' bindtap='itemClick'>{{item.name}}</view>
       </block>
     </view>
+ 
 
 </view>

@@ -102,7 +102,7 @@ Page({
         //console.log("test onload for array" + i);
         var tmp = {};
         tmp.id = i + 1;
-        tmp.name = "liucx";
+        tmp.name = "liucx" + i;
         array[i] = tmp;
       }
       this.setData({
@@ -129,18 +129,14 @@ Page({
       })
     }
   },
-
-  lock: function(flag) {
-    var txtArrs = document.getElementsByTagName('input');
-    for (var i = 0; i < txtArrs.length; i++) {
-      var txt = txtArrs[i];
-      if (txt.type == 'text') {
-        if (flag == 'true') {
-          txt.disabled = true;
-        } else {
-          txt.disabled = false;
-        }
-      }
-    }
+  itemClick: function (e) {
+    // 获取点击条目id
+    var index = parseInt(e.currentTarget.dataset.index);
+    // 获取相应的数据
+    var item = this.data.tableData[index].name;
+    //var item = this.data.tableData[index];
+    // 打印数据
+    console.log(item);
   }
+  
 })
