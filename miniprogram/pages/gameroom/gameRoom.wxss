@@ -1,0 +1,52 @@
+/* miniprogram/pages/gameroom/gameRoom.wxss */
+
+.room-head {
+  width: 100%;
+  height: auto;
+  padding: 20rpx 20rpx 20rpx 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: large;
+  font-weight: bold;
+  color: tomato;
+}
+
+.container {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 4rem 4rem 4rem 4rem;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px
+}
+
+.table-th {
+  font-weight: bold;
+  background-color: #888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.table-td {
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 5px solid #fff; */
+  border-radius: 10px;
+  font-size: 0.8em;
+  min-height: 3rem;
+  color: #f0f0f3;
+  background-color: #e91e63;
+}

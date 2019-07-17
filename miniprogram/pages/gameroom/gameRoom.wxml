@@ -1,0 +1,31 @@
+<!--miniprogram/pages/gameroom/gameRoom.wxml-->
+<text class='room-head'>房间号码:{{roomId}}</text>
+<view class="container">
+
+  <block wx:for='{{tableData}}' wx:key='*this'>
+    <!-- <view class='table-th' wx:if='{{index<3}}'>{{item.name}}</view>
+    <view class='table-td' wx:else>{{item.name}}</view> -->
+    <view class='item'>{{item.name}}</view>
+  </block>
+</view>
+
+<!-- <grid class="container" bindtap=''>
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+</grid> -->
