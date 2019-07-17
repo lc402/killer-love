@@ -47,10 +47,17 @@
   align-items: center;
   justify-content: center;
   /* border: 5px solid #fff; */
-  border-radius: 10px;
+  /* border-radius: 10px; */
   font-size: 0.8em;
   min-height: 3rem;
   color: #f0f0f3;
+  background-color: #e91e63;
+}
+.userinfo-head {
+  width: 135rpx;
+  height: 135rpx;
+  border-radius: 10px;
+  background-size: cover;
   background-color: #e91e63;
 }
 

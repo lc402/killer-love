@@ -12,6 +12,11 @@ App({
     }
 
     this.globalData = {
+      user: {
+        avatarUrl:"",
+        nickName:"",
+        openid:"",
+      },
       room: {
         polices: 3,
         killers: 3,

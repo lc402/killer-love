@@ -1,6 +1,6 @@
 //index.js
 const app = getApp()
-
+var user = getApp().globalData.user;
 Page({
   data: {
     avatarUrl: './user-unlogin.png',
@@ -18,6 +18,25 @@ Page({
       return
     }
 
+    wx.cloud.callFunction({
+      name: 'login',
+      data: {},
+      success: res => {
+        console.log('[云函数] [login] user openid: ', res.result.openid)
+        app.globalData.openid = res.result.openid
+        user.openid = res.result.openid
+        // wx.navigateTo({
+        //   url: '../userConsole/userConsole',
+        // })
+      },
+      fail: err => {
+        console.error('[云函数] [login] 调用失败', err)
+        wx.navigateTo({
+          url: '../deployFunctions/deployFunctions',
+        })
+      }
+    })
+
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -25,6 +44,10 @@ Page({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
             success: res => {
+              user.avatarUrl = res.userInfo.avatarUrl;
+              user.nickName = res.userInfo.nickName;
+              console.log("url:" + res.userInfo.avatarUrl);
+              console.log("nickName:" + res.userInfo.nickName);
               this.setData({
                 avatarUrl: res.userInfo.avatarUrl,
                 userInfo: res.userInfo

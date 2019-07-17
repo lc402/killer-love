@@ -34,7 +34,7 @@
 
   <view class="container">
     <view wx:for='{{tableData}}' wx:for-item="itemData" wx:key='index'>
-      <view class='item' data-index='{{index}}' bindtap='itemClick'>{{itemData.name}}</view>
+      <view class='userinfo-head' style="background-image: url({{itemData.url}})" data-index='{{index}}' bindtap='itemClick'></view>
     </view>
     
   </view>

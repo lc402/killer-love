@@ -1,5 +1,6 @@
 // miniprogram/pages/mainroom/mainroom.js
 var room = getApp().globalData.room;
+var user = getApp().globalData.user;
 Page({
 
   /**
@@ -13,16 +14,26 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var array = [];
+    var players = [];
     for (var i = 0; i < room.totals; i++) {
       console.log("test onload for array" + i);
-      var tmp = {};
-      tmp.id = i + 1;
-      tmp.name = "liucx";
-      array[i] = tmp;
+      if (i === 0) {
+        var player = {};
+        console.log("liucx:" + user.openid);
+        console.log("liucx:" + user.nickName);
+        player.id = user.openid;
+        player.name = user.nickName;
+        player.url = user.avatarUrl;
+        players[i] = player;
+      } else {
+        var player = {};
+        player.id = i + 1;
+        player.name = "liucx";
+        players[i] = player;
+      }
     }
     this.setData({
-      tableData: array
+      tableData: players
     })
   },
 
@@ -37,14 +48,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    this.setData({
-      inputBg: "cornsilk",
-      viewBg: "green",
-      viewRg: "gainsboro",
-      isdisableR: true,
-      isdisableI: false,
-      isdisableInput: false
-    })
+    if (!room.init) {
+      this.setData({
+        inputBg: "cornsilk",
+        viewBg: "green",
+        viewRg: "gainsboro",
+        isdisableR: true,
+        isdisableI: false,
+        isdisableInput: false
+      })
+    }
   },
 
   /**
@@ -100,24 +113,34 @@ Page({
       room.totals = room.polices + room.killers + room.farmers;
       for (var i = 0; i < room.totals; i++) {
         //console.log("test onload for array" + i);
-        var tmp = {};
-        tmp.id = i + 1;
-        tmp.name = "liucx" + i;
-        array[i] = tmp;
+        if (i === 0) {
+          var player = {};
+          console.log("liucx:" + user.openid);
+          console.log("liucx:" + user.nickName);
+          player.id = user.openid;
+          player.name = user.nickName;
+          player.url = user.avatarUrl;
+          array[i] = player;
+        } else {
+          var tmp = {};
+          tmp.id = i + 1;
+          tmp.name = "liucx" + i;
+          array[i] = tmp;
+        }
       }
       this.setData({
         tableData: array,
-        inputBg:"gray",
+        inputBg: "gray",
         viewBg: "gainsboro",
         viewRg: "green",
         isdisableR: false,
         isdisableI: true,
         isdisableInput: true
       })
-    } 
+    }
   },
   reset: function() {
-    if(room.init) {
+    if (room.init) {
       room.init = false;
       this.setData({
         inputBg: "cornsilk",
@@ -129,7 +152,7 @@ Page({
       })
     }
   },
-  itemClick: function (e) {
+  itemClick: function(e) {
     // 获取点击条目id
     var index = parseInt(e.currentTarget.dataset.index);
     // 获取相应的数据
@@ -137,6 +160,9 @@ Page({
     //var item = this.data.tableData[index];
     // 打印数据
     console.log(item);
+    this.setData({
+      avatarUrl: user.avatarUrl
+    })
   }
-  
+
 })
