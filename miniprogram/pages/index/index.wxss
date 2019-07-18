@@ -171,3 +171,98 @@ page {
   line-height: 36rpx;
   word-break: break-all;
 }
+
+.uploaderR {
+  background: cornsilk;
+  height: auto;
+  width: 100%;
+  background: #fff;
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
+  /* flex-wrap: nowrap;
+  justify-content: space-between; */
+}
+.titel-item1 {
+  /* margin: 15rpx; */
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 15rpx;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  border-bottom: 1px solid green;
+  /* background-color: red; */
+  /* border-bottom: 1px solid green; */
+}
+.titel-item1 text{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.titel-item2 {
+  display: flex;
+  margin: 15rpx;
+  flex-direction: row;
+  /* //background-color: greenyellow; */
+  /* border-bottom: 1px solid green; */
+}
+.titel-item2 text{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+.titel-item3 {
+  display: flex;
+  margin: 15rpx;
+  flex-direction: row;
+  /* background-color: blue; */
+  /* border-bottom: 1px solid green; */
+}
+.titel-item3 text{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.input-item {
+  width: auto;
+  height: auto;
+  padding: 0 0 0 0rpx;
+}
+
+.button-view {
+  width: 100%;
+  height: auto;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  /* padding: 20rpx 20rpx 20rpx 20rpx; */
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  /* box-sizing: border-box; */
+  /* border-top: 1px solid rgba(0, 0, 0, 0.1); */
+  background-color: green;
+}
+
+.uploader-button {
+  padding-bottom: 20rpx;
+  height: auto;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
+  background: cornsilk;
+}

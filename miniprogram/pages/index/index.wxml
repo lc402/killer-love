@@ -27,6 +27,19 @@
     </navigator>
   </view>
 
+  <view class="uploaderR" style="background:cornsilk">
+    <view class='titel-item1'>
+      <!-- <text>警察:</text> -->
+      <input class='input-item' type="number" placeholder="输入房间号码" bindinput='getPolice'></input>
+    </view>
+  </view>
+
+
+  <navigator class='uploader-button' style="background:{{inputBg}}" url="../mainroom/mainroom" open-type="navigate">
+
+    <button id="init" class='button-view' style="background:{{viewBg}}" bindtap='init' disabled='{{isdisableI}}'>进入房间</button>
+  </navigator>
+
   <!-- 新建云函数 -->
   <view class="uploader">
     <navigator url="../mainroom/mainroom" open-type="navigate" class="uploader-text">
